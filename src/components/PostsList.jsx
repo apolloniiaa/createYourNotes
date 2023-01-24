@@ -4,11 +4,11 @@ import NewPost from './NewPost';
 import classes from './PostLists.module.css';
 import Modal from './Modal';
 
-const PostsList = () => {
+const PostsList = ({ isPosting, onStopPosting }) => {
   const [enteredBody, setEnteredBody] = useState('');
   const [enteredAuth, setEnteredAuth] = useState('');
 
-  const [modalIsVisible, setModalIsVisible] = useState(true);
+  // const [modalIsVisible, setModalIsVisible] = useState(true);
 
   // //!! enteredBody[0] //current value
   // //!! setEnteredBody[1] //state updating function
@@ -20,20 +20,21 @@ const PostsList = () => {
     setEnteredAuth(e.target.value);
   };
 
-  const hideModalHandler = () => {
-    setModalIsVisible(false);
-  };
+  // const hideModalHandler = () => {
+  //   setModalIsVisible(false);
+  // };
 
   return (
     <>
-      {modalIsVisible ? (
-        <Modal onClose={hideModalHandler}>
+      {isPosting && (
+        <Modal onClose={onStopPosting}>
           <NewPost
             onBodyChange={bodyChangeHandler}
             onAuth={authChangeHandler}
+            onCancel={onStopPosting}
           />
         </Modal>
-      ) : null}
+      )}
       <ul className={classes.posts}>
         <Post author={enteredAuth} body={enteredBody} Post />
         <Post author='Clara' body='Learn to React' Post />

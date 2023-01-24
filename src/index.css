@@ -5,9 +5,11 @@
 body {
   font-family: sans-serif;
   margin: 3rem;
-  background-color: #dfdfdf;
+  background-color: #3f3c51;
 }
-
+#root {
+  background: #222130;
+}
 h1,
 h2 {
   color: #333333;
@@ -18,7 +20,7 @@ h2 {
   padding: 0.5rem 1.5rem;
   cursor: pointer;
   border-radius: 4px;
-  background-color: #800040;
+  background-color: #6f6cc5;
   color: white;
   border: 1px solid #800040;
   margin: 0 1rem;
@@ -71,4 +73,7 @@ h2 {
   height: 100vh;
   top: 0;
   left: 0;
+}
+svg {
+  fill: #c586cc;
 }
