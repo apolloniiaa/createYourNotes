@@ -24,6 +24,7 @@ h2 {
   color: white;
   border: 1px solid #800040;
   margin: 0 1rem;
+  outline: none;
 }
 
 .btn:hover {
@@ -75,5 +76,5 @@ h2 {
   left: 0;
 }
 svg {
-  fill: #c586cc;
+  fill: #ab772a;
 }
